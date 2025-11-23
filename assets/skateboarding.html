@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yavor Georgiev</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="nav-header">
+
+        <!-- Creating a main navigation for the pages of the website. -->
+        <div class="internal-nav-items">
+        <!-- Div for developer information using a unordered list for the left side of the navigation -->
+            <div class="logo-name-block">
+                <a class="logo-link" href="../index.html">
+                    <img class="logo-image" src="logo/logo.png" alt="Yavor Georgievs portfolio logo">
+                </a>
+                <div class="name-and-bullets">
+                    <span class="site-name">Yavor Georgiev</span>
+                    <ul class="site-bullets">
+                        <li>Web Developer</li>
+                        <li>Autobiography</li>
+                        <li>Portfolio 2025</li>
+                    </ul>
+                </div>
+            </div>
+
+              <nav class="main-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="bristol.html">Bristol</a></li>
+                    <li><a href="varna.html">Varna</a></li>
+                    <li class="dropdown">
+                        <a class="dropbtn active" href="hobbies.html">Hobbies</a>
+                        <ul class="dropdown-content">
+                            <li><a href="skateboarding.html">Skateboarding</a></li>
+                            <li><a href="swimming.html">Swimming</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+              </nav>
+    
+    </header>
+    
+    <!-- Main content for the skateboarding page including information about skateboarding a and skate spots with places for images and videos. -->
+  <main class="container">
+    <h1>Skateboarding</h1>
+    <section class="card">
+      <h2>History of Skateboarding</h2>
+      <p>Skateboarding began in the 1950s when surfers in California wanted to surf on land. Over decades it evolved into a global culture
+        The history of skateboarding is it all began when a group of surfers from California were trying to ride waves on the ground and over time it evolved into an olympic sport, there are two main skateboarding styles street and park skateboarding in street skateboarding skaters use urban infrastructure like stairs, rails, ledges, bins, signs and anything you can find on the street  to showcase their technical skills the best skaters get sponsored and featured on a magazine called thrasher the oldest skateboarding magazine. Park skating involves ramps and manmade structures for skating.</p>
+    </section>
+
+    <section class="card">
+      <h2>M32 Skatepark (Bristol)</h2>
+      <p>This is one of my favorite local skateparks it is a diy skatepark and has been build by skaters for skaters it is a very popular skatepark during the winter months as it is sheltered by the motorway above it.</p>
+      <figure><img src="images/skateboarding/m32.jpeg" alt="M32 Skatepark placeholder"><figcaption class="sr-only">Legendary DIY skate spot under the motorway.</figcaption></figure>
+    </section>
+
+
+    <section class="card" id="ollie">
+      <h2>The Plaza</h2>
+      <p>The Plaza refers to a popular flatgound spot with ledges in the city centre where loads of skaters go to during the winter months as it has bright lights due to it being in the middle of the city center, the council made efforts to reduce the vast amount of skaters in the area with skatestopers between the tiles but it only gave us another absticle to do tricks off of. Here is a picture of me doing a trick over a beer crate from the local pub. </p>
+      <figure><img src="images/skateboarding/ollie.jpeg" alt="The Plaza placeholder"><figcaption class="sr-only">Central Bristol street-style skate plaza.</figcaption></figure>
+    </section>
+
+            <!-- Section for videos of me skateboarding -->
+    <section class="card" class="dropdown-gallery">
+            <details class="dropdown-item" id="skateboarding">
+                <summary>Videos of me skateboarding.Click me!</summary>
+  
+
+                <!-- Video Dropdown Carousel -->
+                <div class="carousel skate-videos">
+                    <input type="radio" name="skate-video" id="sk1" checked>
+                    <input type="radio" name="skate-video" id="sk2">
+                    <input type="radio" name="skate-video" id="sk3">
+
+                    <div class="slides">
+                        <video controls loop muted src="images/skateboarding/m32-skateboarding.mp4"></video>
+                        <video controls loop muted src="images/skateboarding/plaza-skateboarding.mp4"></video>
+                        <video controls loop muted src="images/skateboarding/skateboarding-stgeorge.mp4"></video>
+                    </div>
+
+                    <div class="arrow-wrapper">
+                        <!-- Left arrows -->
+                        <label for="sk3" class="arrow left prev1">&#10094;</label>
+                        <label for="sk1" class="arrow left prev2">&#10094;</label>
+                        <label for="sk2" class="arrow left prev3">&#10094;</label>
+
+                        <!-- Right arrows -->
+                        <label for="sk2" class="arrow right next1">&#10095;</label>
+                        <label for="sk3" class="arrow right next2">&#10095;</label>
+                        <label for="sk1" class="arrow right next3">&#10095;</label>
+                    </div>
+                </div>
+
+
+            </details>
+
+    </section>
+  </main>
+    
+    
+
+        <!-- Footer of the website.  -->
+    <footer class="website-footer">
+        <!-- Div to hold the items within the footer to aid with semantics and styling. -->
+        <div class="footer-items">
+            <!-- Footer content, text and github link that opens in a new tab. -->
+            <p>© Yavor Georgiev's Portfolio 2025.</p>
+            <a href="https://github.com" target="_blank">
+                <img src="logo/icons8-github-logo-64.png" alt="GitHub">
+            </a>
+        </div>
+
+    </footer>
+    
+</body>
+</html>

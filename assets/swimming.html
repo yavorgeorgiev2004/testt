@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yavor Georgiev</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="swimming">
+    <header class="nav-header">
+
+        <!-- Creating a main navigation for the pages of the website. -->
+        <div class="internal-nav-items">
+        <!-- Div for developer information using a unordered list for the left side of the navigation. -->
+            <div class="logo-name-block">
+                <a class="logo-link" href="index.html">
+                    <img class="logo-image" src="assets/logo/logo.png" alt="Yavor Georgievs portfolio logo">
+                </a>
+                <!-- Name and quick information about me and the website.-->
+                <div class="name-and-bullets">
+                    <span class="site-name">Yavor Georgiev</span>
+                    <ul class="site-bullets">
+                        <li>Web Developer</li>
+                        <li>Autobiography</li>
+                        <li>Portfolio 2025</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Main navigation links styled to the right of the navigation bar.-->
+          <nav class="main-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="bristol.html">Bristol</a></li>
+                    <li><a href="varna.html">Varna</a></li>
+                    <li class="dropdown">
+                        <!-- active label for the current page -->
+                        <a class="dropbtn active" href="hobbies.html">Hobbies</a>
+                        <ul class="dropdown-content">
+                            <li><a href="skateboarding.html">Skateboarding</a></li>
+                            <li><a href="swimming.html">Swimming</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+          </nav>
+    
+    </header>
+    <!-- Main section for swimming content. Information about my history with swimming images and an iframe with the loction of the swimming pool i trained in on google maps. -->
+    <main class="container">
+        <h1>Swimming</h1>
+
+        <section class="card">
+          <h2>Swimming</h2>
+          <p>I started swimming at age 7 and trained consistently for 6 years. It helped build discipline, strength, and focus.</p>
+        </section>
+
+        <section class="card">
+          <h2>Me swimming</h2>
+          <figure>
+            <img src="assets/images/swimming/me-swimming.jpg" alt="picture of me swimming">
+            <figcaption class="sr-only">Me swimming at my house in Bulgaria.</figcaption>
+          </figure>
+            <br>
+          <figure>
+            <img src="assets/images/swimming/myswimming-pool-varna-unsplash.jpg" alt="picture of the dragon statute outside of my childhood swimming poo".>
+            <figcaption class="sr-only">Swimming dragons holding an egg pool statute</figcaption>
+          </figure>     
+        </section>
+    
+
+        <section class="card">
+          <h2>The location of the swimming pool if you ever go to Varna.</h2>
+          <p>Here is the pool where I trained:</p>
+          <iframe class="google-maps-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2908.5265956647204!2d27.91829427615283!3d43.19844317112737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a453f9fb29348d%3A0x4cf07137dde55bf0!2s%22Primorski%22%20Swimming%20Pool!5e0!3m2!1sen!2suk!4v1763467250021!5m2!1sen!2suk" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+  </main>
+    
+        <!-- Footer of the website  -->
+    <footer class="website-footer">
+        <!-- Div to hold the items within the footer to aid with semantics and styling -->
+        <div class="footer-items">
+            <!-- Footer content, text and github link that opens in a new tab. -->
+            <p>© Yavor Georgiev's Portfolio 2025.</p>
+            <a href="https://github.com" target="_blank">
+                <img src="assets/logo/icons8-github-logo-64.png" alt="GitHub">
+            </a>
+        </div>
+
+    </footer>
+    
+</body>
+</html>
