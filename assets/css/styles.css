@@ -1,0 +1,648 @@
+
+html, body {
+    height:100%;
+}
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;    
+}
+body{
+  
+    line-height: 1.5rem; 
+    font-family:Arial, Helvetica, sans-serif; 
+    background-image:-webkit-linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0,0.5)), url('../background/background.jpg');
+    background-size: cover; /* Makes image cover entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-attachment: fixed; /* Keeps background fixed while scrolling */
+}
+:root{
+    --primary: #6cd293;
+    --card: #111010;
+    --secondary: #b9f10e; 
+    --header-left-color: rgb(0, 253, 173);
+    --header-right-color: rgb(200, 255, 0);
+    --nav-shadow:  rgba(140, 0, 254, 0.852) ;   
+    --footer-color: rgb(112, 200, 161);
+    --max-width: 1000px; /* Maximum width for content containers */
+    --card: #111010;
+    --shadow: 0 6px 18px rgba(255, 0, 0, 0.359);
+    --muted: #f6fcd4;
+    --heading-color:rgb(236, 96, 96);
+    --ptext:white; 
+}
+/* color styling for headings for color and positioning */
+h1 {
+  color: #38ed38;
+}
+h2 {
+  color: var(--secondary);
+}
+h3{
+  color: red;
+}
+#hero-title {
+    margin-bottom: 1rem;
+}
+#hobbies{
+    /* display: block; */
+    margin: 1rem 0;
+    color: #38ed38;
+}
+#cities{
+    margin: 1rem 0;
+    color: #38ed38;
+}
+.internal-nav-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.nav-header {
+    display: flex;
+    background: linear-gradient(90deg, var(--header-left-color), var(--header-right-color));
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0px 0px 1vh 0.5vh var(--nav-shadow) ;
+    padding: 0.5rem;
+}
+.main-nav ul {
+    list-style: none;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+}
+.main-nav li a {
+    padding: 0.5rem 1rem;
+    display: flex;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+/* Highlights the currently active navigation link */
+.main-nav a.active {
+  background: rgba(255, 252, 247, 0.668); 
+  color: black; /* Black text */
+  box-shadow: 0px 0px 0.5vh 0.1vh var(--nav-shadow);
+  border-radius: 10px;
+}
+.main-nav  li :hover {
+    background: rgba(255, 252, 247, 0.668);
+    border-radius: 10px;
+    box-shadow: 0px 0px 0.5vh 0.1vh var(--nav-shadow) ;
+}
+.logo-name-block {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.dropdown {
+    /* Creates positioned dropdown content.And allows dropdown to sit inline with other nav items */
+  position: relative; 
+  display: inline-block; 
+}
+
+/* Dropdown button styling to match normal nav links */
+.dropbtn {
+  border-radius: 10px;
+  background: none; /* Transparent background */
+  border: none; 
+  color: #0a0909; 
+  padding: 0.5rem 1rem; /* padding to matche nav links */
+  font-weight: bold; /* Bold text to match nav links */
+}
+
+/* hidden by default dropdown */
+.dropdown-content {
+  display: none !important; /* Hidden by default, !important to override other display rules. */
+  position: absolute; /* Positioned to be relative to parent to stay alligned */
+  background-color: #ffffff; /* White background */
+  min-width: 160px; /*makes dropdown at least 160px wide */
+  border-radius: 10px; /* Rounded corners */
+  z-index: 20; /* makes it stack over other content */
+}
+.dropdown-content a {
+    border-radius: 10px;
+    display: flex; /* Enables flexbox to help with alignment */
+    transition: background 0.2s, color 0.2s; /* Smooth 0.2s transition */
+}
+
+/* Shows dropdown content when hovering over dropdown container */
+.dropdown:hover .dropdown-content {
+  display: block !important; /* Makes dropdown visible using !important to override the default display: none */
+}
+
+/* Highlights dropdown button when dropdown is hovered upon. */
+.dropdown:hover .dropbtn {
+  border-radius: 10px; /* adding  rounded corners to the hobbies button when dropdown is open */
+  background: rgba(255, 252, 247, 0.668); /* Semi-transparent with the same opacity when layerd with dropdown background creates a solid background to highlight hovered item */
+  box-shadow: 0px 0px 0.5vh 0.1vh var(--nav-shadow); /* Purple shadow to match main nav hover */
+}
+/* Hover glow also makes safari open dropwdown.*/
+.dropdown-content a:hover {
+  background: rgba(255, 252, 247, 0.668);
+  color: black;
+  box-shadow: 0px 0px 0.5vh 0.1vh var(--nav-shadow);
+}
+
+
+.name-and-bullets {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.site-bullets {
+  margin: 0.1rem 0 0 0;
+  padding-left: 1.2rem;
+  color: #888;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.site-bullets li {
+  margin-bottom: 0.2rem;
+}
+
+body.about-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.about-page main.container {
+  flex: 1 0 auto;
+}
+
+body.about-page .website-footer {
+  margin-top: auto;
+}
+
+.about-page .website-footer {
+
+  margin-top: auto;
+}
+ .logo-image {
+    width: 5vw; 
+    height: auto;
+    min-height: 80px;
+    min-width: 80px;
+    display: block;
+    border-radius: 25px;
+}
+.website-footer{
+  background:var(--footer-color);
+  color:#181818;
+  padding:1.25rem;
+  text-align:center;
+  min-height: 10vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+/* Main content wrapper - constrains width and centers content */
+.container {
+  max-width: var(--max-width); /* Limits width to 1000px */
+  margin: 2rem auto; /* 32px top and bottom margin, auto left and right centering inside the container */
+  padding: 0 1rem; /* No top or bottom padding, 16px left and right padding*/
+}
+.hero{
+  grid-template-columns: 1fr; /* Single column layout mobile-first approach */
+  gap: 1rem; /* 16px space between grid items */
+  align-items: center; /* Vertically centers items */
+  margin-bottom: 1.25rem; /* space below hero section */
+  min-height: 430px; /* Ensures card is at least 430px tall so image can stay inside  */
+  background: var(--card); /* Very dark gray background to create a contrast */
+  border-radius: 10px; /* 10px rounded corners */
+  padding: 1.25rem; /* internal spacing on all sides */
+  box-shadow: var(--shadow); /* Red-tinted shadow using a variable */
+  display: flex; /* flexbox layou */
+  gap: 1rem; /* 16px space between flex items */
+  align-items: start; /* Aligns flex items to the top  */
+  min-width: 200px; /* makes card at least 200px wide */
+}
+
+/* Container for hero image/media */
+.hero-media {
+  min-height: 300px; /* Ensures container is at least 300px */
+  max-height: 400px; /* Limits container to maximum 400px  */
+  width: 40%; /* Takes 40% of container width on desktop keeps image inside the container */
+  aspect-ratio: 2946 / 3688; /* Maintains  aspect ratio */
+}
+
+/* Hero section image styling */
+.hero img {
+  width: 90%; /* Takes 90% of container width (allows 5% margin on each side) */
+  height: auto; /* Maintains aspect ratio based on width */
+  max-height: 400px; /* Limits image to maximum 400px tall */
+  display: block;
+  object-fit: cover; /* Crops image to fill container without distortion */
+  justify-self: center; /* Centers image horizontally in flex container */
+  border-radius: 8px; /* Slightly rounded corners for softer appearance */
+}
+
+/* Hero heading styling */
+.hero h1 {
+  font-size: 1.6rem; /*  heading size */
+  color: var(--primary); /* Light green color  */
+}
+.hero p {
+  margin: 0.5rem 0 0; /* 8px top margin,removing bottom and side margins */
+  color: var(--muted); /* Pale yellow color using CSS variable */
+}
+/* Styles for screens 900px and wider */
+@media (min-width: 900px) {
+  .hero img {
+    height: 350px; /* Fixed height for desktop images */
+  }
+  
+  /* Hero section is set to become a two-column layout on desktop */
+  .hero {
+    grid-template-columns: 2fr 1fr; /* Main content takes 2/3 width, media takes 1/3 */
+    align-items: start; /* keeps items aligned to the top instead of center */
+  }
+      /* Two-column layout utility class for desktop */
+  .two-col {
+    display: grid; /* Enables grid layout */
+    grid-template-columns: 1fr 320px; /* Main content flexible, saidebar fixed at 320px */
+    gap: 1rem; /* 16px space between columns */
+    align-items: start; /* Aligns content to top */
+  }
+  
+  /* Smaller buttons on desktop (more compact design) */
+  .btn {
+    padding: 0.45rem 0.7rem; /* Reduced padding: 7.2px top/bottom, 11.2px left/right */
+    font-size: 0.9rem; /* Slightly smaller text (14.4px) */
+  }
+
+
+}
+/* Styles for screens under 900px eg phones */
+@media (max-width: 899px) {
+  /* Card images shorter on mobile to save space */
+  .card img {
+    height: 180px; 
+  }
+  
+  /* Hero media takes full width on mobile */
+  .hero .hero-media {
+    width: 100%; 
+    order: 2; /* Moves image below text in flex order */
+  }
+     /* Two-column layout becomes single column on mobile */
+  .two-col {
+    display: block; /* Removes grid, stacks content vertically */
+  }
+  
+  /* Even smaller buttons on mobile */
+  .btn {
+    padding: 0.4rem 0.6rem; /* 6.4px top/bottom, 9.6px left/right */
+    font-size: 0.85rem; /* 13.6px text */
+  }
+  }
+  
+  /* Even smaller buttons on mobile */
+
+  
+  /* Stack hero card vertically on mobile */
+  .hero .hero-card {
+    flex-direction: column;
+  }
+/* image styling for mobile */
+  .hero .hero-media {
+    width: 100%; /* Full width of container */
+    order: 2; /* Moves image below text in flex order */
+  }
+
+/* Popup container using HTML <details> element */
+.hero-popup {
+  margin-top: 1.5rem; /* 24px space above popup */
+  padding: 1rem; /* 16px internal spacing on all sides */
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent white overlay  */
+  border: 1px solid rgba(255,255,255,0.3); /* Semi-transparent white border  */
+  border-radius: 10px; /* Rounded corners */
+  backdrop-filter: blur(6px); /* Blurs content behind popup for frosted glass effect */
+  cursor: pointer; /* Shows hand cursor to indicate clickability */
+  overflow: hidden; /* Hides content that extends beyond boundaries - necessary for slide animation */
+}
+/* Summary button text */
+.hero-popup > summary {
+  font-size: 1.15rem; /* 18.4px - slightly larger text */
+  font-weight: 700; /* Bold text for emphasis */
+  color: #52e934; /* Bright green color */
+  list-style: none; /* Removes default triangle/arrow marker */
+  outline: none; /* Removes focus outline */
+  padding: 0.3rem; /* 4.8px internal spacing on all sides */
+}
+
+/* Removes webkit browser's default arrow icon for details element */
+.hero-popup > summary::-webkit-details-marker {
+  display: none; /* Hides the marker for cleaner UI */
+}
+
+/* Content wrapper for sliding animation */
+.popup-content {
+  max-height: 0; /* Initially collapsed - no height */
+  overflow: hidden; /* Hides content when collapsed */
+  opacity: 0; /* Fully transparent when closed */
+  transition: max-height 0.45s ease, opacity 0.45s ease; /* Smooth animation for opening/closing - 450ms duration with easing */
+}
+/* When details element is opened*/
+.hero-popup[open] .popup-content {
+  max-height: 500px; /* Expands to show content */
+  opacity: 1; /* Fully visible when open */
+}
+
+/* Box for the popup text content */
+.popup-content p {
+  background: #f6f7f4; /* Very light gray/off-white background */
+  color: #04090d; /* Very dark blue/black text */
+  padding: 1rem; /* 16px internal spacing on all sides */
+  border-radius: 6px; /* Slightly rounded corners */
+  margin-top: 1rem; /* 16px space above paragraph */
+}
+
+/* Main button styling */
+.btn {
+  display: inline-block; 
+  padding: 0.55rem 0.85rem; 
+  border-radius: 10px; /* Rounded corners */
+  background: var(--primary); /* Light green background using CSS variable */
+  color: rgb(47, 41, 50); /* Very dark purple/black text */
+  text-decoration: none; /* Removes underline*/
+  font-weight: 600; /* Semi-bold text for emphasis */
+  margin-top: auto; /* pushes button to bottom */
+  align-self: flex-start; /* Aligns button to left side of flex container */
+}
+
+/* Secondary button variant */
+.btn.secondary {
+  background: var(--secondary); /* Lime green  */
+}
+
+
+/* Responsive grid container for cards */
+.grid {
+  display: grid; /* Enables CSS grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Automatically creates columns, each minimum 300px, fills available space */
+  gap: 1rem; /* 16px space between grid items */
+}
+
+
+/* Card container styling */
+.card {
+  background: var(--card); /* Dark background using CSS variable */
+  border-radius: 12px; /* Rounded corners */
+  padding: 1rem; /* 16px internal spacing on all sides */
+  box-shadow: var(--shadow); /* Red-tinted shadow using CSS variable */
+}
+ /* Card heading styling */
+.card h3 {
+  margin-top: 0; /* Removes top margin so heading sits flush with card top */
+  color: var(--heading-color); /* Coral/salmon red using CSS variable */
+}
+
+/* Card paragraph styling */
+.card p {
+  color: var(--ptext); /* White text using CSS variable */
+  margin: 0.5rem 0 0; /* 8px top margin, no bottom/side margins */
+}
+.card img {
+  width: 100%; /* Takes full width of card */
+  height: 300px; /* Fixed height for consistency */
+  object-fit: cover; /* Crops image to fill space without distortion */
+  border-radius: 8px; /* Rounded corners */
+  display: block; /* Removes inline spacing below image */
+}
+/* Metadata list styling (tags, categories, etc.) */
+.meta-list {
+  list-style: none; /* Removes bullet points */
+  display: flex; /* Enables flexbox for horizontal layout */
+  gap: 0.5rem; /* 8px space between items */
+  flex-wrap: wrap; /* Allows items to wrap to next line */
+}
+
+/* Individual metadata list items (tag pills) */
+.meta-list li {
+  background: #e6e88a; /* Light yellow background */
+  padding: 0.4rem 0.6rem; /* 6.4px top/bottom, 9.6px left/right */
+  border-radius: 8px; /* Rounded corners for pill shape */
+  color: var(--card); /* Dark text using CSS variable */
+  font-size: 0.9rem; /* Slightly smaller text  */
+}
+/* Changes email link color to white on hover for visual feedback */
+.email-link:hover {
+  color: white;
+}
+
+/* Default email link styling on about page  */
+.email-link {
+  color: red; /*  red color */
+  text-decoration: none; /* Removes default underline */
+  font-weight: bold; /* Makes text thicker for emphasis */
+}
+
+.sr-only{
+    position:absolute!important;
+    width:1px;height:1px;
+    padding:0;margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    border:0;
+} /* Screen reader only class which hides element visually but keeps it accessible to screen readers */
+
+ #activities-list li {
+   color:white;
+}
+.google-maps-iframe {
+  width: 100%; /* Takes full width of parent container */
+  height: 450px; /* Fixed height for consistent map display */
+  border: 0; /* Removes default iframe border */
+  border-radius: 10px; /* Rounds corners to match site design */
+  display: block; /* Removes inline spacing below iframe */
+}
+/* Skateboarding section*/
+/* Carousel container sizing */
+.carousel {
+  position: relative; /* Creates positioning context for children */
+  overflow: hidden; /* Ensures content doesn't spill out beyond container boundaries */
+  border-radius: 10px; /* Rounded corners */
+  margin: 1rem 0; /* 16px top/bottom margin, no side margins */
+  width: 100%; /* Takes full width of parent container */
+  max-width: 900px; /* Limits maximum width to 900px on large screens */
+}
+/* Carousel slide media sizing - overrides earlier declarations */
+.carousel .slides > video {
+    height: auto; /* Height automatically adjusts based on width */
+    position: relative; /* Establishes positioning context */
+    max-width: 100%; /* Never exceeds container width */
+    object-fit: cover; /* Crops media to fill space without distortion */
+    max-height: 500px; /* Limits maximum height to 500px */
+}
+.dropdown-gallery {
+    max-width: 900px; /* Limits maximum width to 900px */
+    margin: 2rem auto; /* 32px top/bottom margin, auto left/right centering for container */
+    padding: 0 1rem; /* No top/bottom padding, 16px left/right padding */
+    min-height: 80vh; /* Minimum height of 80% of viewport */
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column;
+    gap: 1rem;
+}
+/* Individual accordion item container */
+.dropdown-item {
+    border: 2px solid #333; /* Dark gray border around item */
+    background: #fff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hides content that extends beyond boundaries */
+}
+/* Summary element (clickable header) of accordion item */
+.dropdown-item > summary {
+    padding: 1rem; /* 16px internal spacing on all sides */
+    font-size: 1.3rem; /* 20.8px - larger text for emphasis */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Shows hand cursor to indicate clickability */
+    background: #222; /* Very dark gray background */
+    color: #fff; /* White text */
+    outline: none; /* Removes focus outline (accessibility concern) */
+    list-style: none; /* Removes default marker/arrow */
+}
+/* Removes webkit browser's default marker for details element */
+.dropdown-item > summary::-webkit-details-marker {
+    display: none; /* Hides the triangle/arrow marker */
+}
+
+/* Animation when accordion item opens */
+.dropdown-item[open] {
+    animation: dropdownOpen 0.4s ease; /* Plays dropdownOpen animation over 400ms with easing */
+}
+
+/* Keyframe animation for opening accordion items */
+@keyframes dropdownOpen {
+    from { 
+        opacity: 0; /* Starts fully transparent */
+        transform: translateY(-10px); /* Starts 10px above final position */
+    }
+    to { 
+        opacity: 1; /* Ends fully visible */
+        transform: translateY(0); /* Ends at final position */
+    }
+}
+/* Main carousel container */
+.carousel {
+    position: relative; /* Creates positioning context for absolutely positioned arrows */
+    overflow: hidden; /* Hides slides that are outside visible area */
+    border-radius: 10px; /* Rounded corners */
+    margin: 1rem 0; /* 16px top/bottom margin, no side margins */
+}
+
+/* Hides radio button inputs that control carousel */
+.carousel input { 
+    display: none; /* Radio buttons are hidden, labels used for clicking */
+}
+
+/* Container that holds all carousel slides */
+.slides {
+    display: flex; /* Enables flexbox for horizontal slide arrangement */
+    width: 100%; /* Takes full width of carousel container */
+    transition: transform 0.5s ease; /* Smooth sliding animation - 500ms with easing */
+}
+/* Individual slide videos */
+.slides video {
+    width: 100%; /* Takes full width of slide */
+    height: 220px; /* Fixed height for consistency */
+    object-fit: cover; /* Crops media to fill space without distortion */
+    border-radius: 6px; /* Slightly rounded corners */
+    margin-bottom: 1rem; /* 16px space below media */
+    display: block; /* Removes inline spacing below media */
+}
+
+/* Enusres each slide takes full width of carousel */
+.slides > * {
+    flex: 0 0 100%; /* Doesn't grow or shrink, fixed at 100% width */
+}
+/* Radio buttons/ slide control*/
+
+/* When first radio button checked, show first slide */
+#sk1:checked ~ .slides { 
+    transform: translateX(0%); /* No horizontal translation -> first slide visible */
+}
+
+/* When second radio button checked, show second slide */
+#sk2:checked ~ .slides { 
+    transform: translateX(-100%); /* Moves slides left by 100% -> second slide visible */
+}
+
+/* When third radio button checked, show third slide */
+#sk3:checked ~ .slides { 
+    transform: translateX(-200%); /* Moves slides left by 200% -> third slide visible */
+}
+/*Carousel arows.*/
+/* Arrow labels previous/next buttons - hidden by default */
+.arrow-wrapper label {
+    display: none; /* Hidden until specific radio button is checked */
+    position: absolute; /* Positioned relative to .carousel container */
+    top: 50%; /* Positioned at vertical center */
+    transform: translateY(-50%); /* Adjusts arrows to truly center vertically */
+    font-size: 2rem; /* Large text  for arrow symbols */
+    background: rgba(0,0,0,0.4); /* Semi-transparent black background  */
+    padding: 0.5rem 0.8rem; /* 8px top/bottom, 12.8px left/right */
+    border-radius: 50%; /* Circular button shape */
+    cursor: pointer; /* Shows hand cursor */
+    color: white; /* White arrow symbols */
+    z-index: 10; /* Stacking order - appears above slides */
+    user-select: none;
+}
+/* Left arrow positioning */
+.arrow-wrapper .left { 
+    left: 10px; /* 10px from left edge of carousel */
+}
+
+/* Right arrow positioning */
+.arrow-wrapper .right { 
+    right: 10px; /* 10px from right edge of carousel */
+}
+
+/* Shows appropriate arrows based on which slide is active. When slide is active, shows corect prvious and next arrows. */
+#sk1:checked ~ .arrow-wrapper .prev1, 
+#sk1:checked ~ .arrow-wrapper .next1, 
+#sk2:checked ~ .arrow-wrapper .prev2,
+#sk2:checked ~ .arrow-wrapper .next2,
+#sk3:checked ~ .arrow-wrapper .prev3,
+#sk3:checked ~ .arrow-wrapper .next3 {
+    display: block; /* Makes the arrows visible */
+}
+#ollie img {
+  min-height: 400px; /* Ensures these images are at least 400px tall */
+}
+ 
+
+.website-footer p {
+  color: #181818;
+}
+
+.footer-items{
+  max-width: 100vw;
+  margin:2rem auto;
+  font-size: small;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  
+} 
