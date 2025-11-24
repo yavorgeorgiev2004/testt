@@ -54,6 +54,129 @@ h3{
     margin: 1rem 0;
     color: #38ed38;
 }
+
+:root {
+
+  --text-color:rgb(7, 7, 7);
+
+}
+.nav {
+  height: 60px;
+  background: linear-gradient(90deg, var(--header-right-color),var(--header-left-color));
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.links-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nav a{
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.nav a:hover{
+  
+    background: rgba(255, 252, 247, 0.668);
+    border-radius: 10px;
+    box-shadow: 0px 0px 0.5vh 0.1vh var(--nav-shadow) ;
+
+}
+.nav svg{
+  fill: red;
+}
+#sidebar-active{
+  display: none;
+
+}
+.open-sidebar-button, .closed-sidebar-button{
+  display: none;
+
+}
+@media(max-width: 700px){
+  .links-container{
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+    width: 300px;
+    background: linear-gradient(90deg, var(--header-right-color),var(--header-left-color));
+    box-shadow: 0px 0px 5vh 0.1vh var(--nav-shadow) ;
+    transition: 0.75s ease-out;
+
+
+  }
+  .nav a{
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    padding: 20px 30px;
+    justify-content: flex-start;
+  }
+  .open-sidebar-button, .closed-sidebar-button{
+  display: block;
+  padding: 20px;
+  }
+  #sidebar-active:checked ~ .links-container{
+    right: 0;
+  }
+  #sidebar-active:checked ~ #overlay{
+
+    z-index: 9;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+  }
+
+
+}
+@media (max-width: 700px) {
+  header{
+    display: none !important;
+  }
+
+}
+.nav {
+  position: sticky !important; 
+  top: 0;
+  z-index: 100;
+}
+
+@media(min-width:701px){
+  .nav {
+    display: none !important;
+  }
+}
+a.logo-link-mobile, .name a:hover{
+  background: none !important;
+  border-radius: none !important;
+  box-shadow: none !important;
+
+}
+.logo-image-mobile{
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+.name p{
+  color: white;
+  z-index: 100;
+}
+
 .internal-nav-items {
     display: flex;
     align-items: center;
@@ -359,12 +482,13 @@ body.about-page .website-footer {
   max-height: 0; /* Initially collapsed - no height */
   overflow: hidden; /* Hides content when collapsed */
   opacity: 0; /* Fully transparent when closed */
-  transition: max-height 0.45s ease, opacity 0.45s ease; /* Smooth animation for opening/closing - 450ms duration with easing */
+  transition: 1s ease; /* Smooth transition 1 second with ease*/
 }
 /* When details element is opened*/
 .hero-popup[open] .popup-content {
   max-height: 500px; /* Expands to show content */
   opacity: 1; /* Fully visible when open */
+
 }
 
 /* Box for the popup text content */
